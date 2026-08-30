@@ -8,30 +8,141 @@
 </head>
 
 <body>
-    <main class="container">
-        <h1>My Interactive Web Page</h1>
 
+    <header>
+        <h1>My Interactive Web Page</h1>
+        <p>Welcome to my JavaScript project!</p>
+    </header>
+
+    <main>
+
+        <!-- DOM Interaction -->
         <section>
             <h2>Change the Message</h2>
-            <p id="message">Click the button to change this message!</p>
-            <button id="changeButton">Change Message</button>
+
+            <p id="message">Click the button to change this message.</p>
+
+            <button type="button" id="changeButton">
+                Change Message
+            </button>
         </section>
 
+
+        <!-- Live Name Interaction -->
         <section>
-            <h2>Type Your Name</h2>
-            <input type="text" id="nameInput" placeholder="Enter your name">
+            <h2>Enter Your Name</h2>
+
+            <label for="nameInput">Your Name:</label>
+            <input
+                type="text"
+                id="nameInput"
+                name="nameInput"
+                placeholder="Enter your name"
+            >
+
             <p id="nameDisplay">Your name will appear here.</p>
         </section>
 
+
+        <!-- Add Items Interaction -->
         <section>
-            <h2>My List</h2>
-            <input type="text" id="itemInput" placeholder="Enter an item">
-            <button id="addButton">Add Item</button>
+            <h2>Add an Item</h2>
+
+            <label for="itemInput">Item:</label>
+            <input
+                type="text"
+                id="itemInput"
+                name="itemInput"
+                placeholder="Enter an item"
+            >
+
+            <button type="button" id="addButton">
+                Add Item
+            </button>
 
             <ul id="itemList"></ul>
         </section>
+
+
+        <!-- Required Contact Form Validation -->
+        <section>
+            <h2>Contact Me</h2>
+
+            <form id="contactForm" novalidate>
+
+                <div>
+                    <label for="contactName">Name *</label>
+
+                    <input
+                        type="text"
+                        id="contactName"
+                        name="contactName"
+                        aria-describedby="nameError"
+                        required
+                    >
+
+                    <p
+                        id="nameError"
+                        role="alert"
+                        aria-live="polite"
+                    ></p>
+                </div>
+
+
+                <div>
+                    <label for="contactEmail">Email *</label>
+
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        name="contactEmail"
+                        aria-describedby="emailError"
+                        required
+                    >
+
+                    <p
+                        id="emailError"
+                        role="alert"
+                        aria-live="polite"
+                    ></p>
+                </div>
+
+
+                <div>
+                    <label for="contactMessage">Message *</label>
+
+                    <textarea
+                        id="contactMessage"
+                        name="contactMessage"
+                        rows="5"
+                        aria-describedby="messageError"
+                        required
+                    ></textarea>
+
+                    <p
+                        id="messageError"
+                        role="alert"
+                        aria-live="polite"
+                    ></p>
+                </div>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+        </section>
+
     </main>
 
+
+    <footer>
+        <p>&copy; 2026 My Interactive Web Page</p>
+    </footer>
+
+
     <script src="script.js"></script>
+
 </body>
 </html>
