@@ -43,3 +43,39 @@ addButton.addEventListener("click", function () {
         itemInput.value = "";
     }
 });
+// Contact form validation
+const contactForm = document.querySelector("#contactForm");
+const nameField = document.querySelector("#contactName");
+const emailField = document.querySelector("#contactEmail");
+const messageField = document.querySelector("#contactMessage");
+
+const nameError = document.querySelector("#nameError");
+const emailError = document.querySelector("#emailError");
+const messageError = document.querySelector("#messageError");
+
+contactForm.addEventListener("submit", function (event) {
+    let isValid = true;
+
+    nameError.textContent = "";
+    emailError.textContent = "";
+    messageError.textContent = "";
+
+    if (nameField.value.trim() === "") {
+        nameError.textContent = "Please enter your name.";
+        isValid = false;
+    }
+
+    if (emailField.value.trim() === "") {
+        emailError.textContent = "Please enter your email.";
+        isValid = false;
+    }
+
+    if (messageField.value.trim() === "") {
+        messageError.textContent = "Please enter a message.";
+        isValid = false;
+    }
+
+    if (!isValid) {
+        event.preventDefault();
+    }
+});
